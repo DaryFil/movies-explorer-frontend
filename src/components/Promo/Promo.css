@@ -1,0 +1,10 @@
+.promo {
+    width: 100%;
+    min-height: 524px;
+    display: flex;
+    background-color: #073042;
+    background-image: url('../../images/logoLanding.svg');
+    background-repeat: no-repeat;
+    background-size: 320px;
+    background-position: center 82px;
+}
