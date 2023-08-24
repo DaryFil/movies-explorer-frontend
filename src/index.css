@@ -4,6 +4,7 @@
 .page {
   background-color: #202020;
   min-width: 320px;
+  color: #fff;
   font-family: 'Inter', Arial, sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -13,7 +14,7 @@
   text-rendering: optimizeLegibility;
 }
 .link-hover {
-  transition: opacity .3s;
+  transition: opacity .4s;
   cursor: pointer;
   user-select: none;
   
@@ -26,7 +27,7 @@
 }
 
 .button-hover {
-  transition: opacity .3s;
+  transition: opacity .4s;
   cursor: pointer;
   user-select: none;
   }

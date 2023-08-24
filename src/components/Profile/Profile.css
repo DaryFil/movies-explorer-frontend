@@ -1,0 +1,117 @@
+.profile {
+    margin: 0 auto;
+    padding: 74px 30px 70px;
+    min-height: calc(100vh - 74px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+ }
+
+.profile__container {
+    width: 100%;
+    max-width: 410px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile__title {
+    margin: 0;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
+}
+
+.profile__form {
+    margin-top: 106px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    }
+
+.profile__field {
+  padding-top: 17px;
+  padding-bottom: 17px;
+  width: 100%;
+  display: grid;
+  justify-content: space-between;
+  row-gap: 1px;
+  grid-template-columns: repeat(2, 140px);
+  grid-template-areas:
+    "label input";
+    }
+.profile__field:first-of-type {
+    border-bottom: 1px solid #424242;
+    }
+
+.profile__field:last-of-type {
+  padding-bottom: 0;
+    }
+
+.profile__label {
+    font-size: 11px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: normal;
+}
+
+.profile__input {
+    padding: 0;
+    color: #FFF;
+    background-color: #202020;
+    border: none;
+    font-size: 11px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: normal;
+    text-align: right;
+    grid-area: input;
+    
+}
+
+.profile__container-utils {
+    margin-top: 220px;
+    display: flex;
+    flex-direction: column;
+}
+@media screen and (max-width: 556px) {
+    .profile__container-utils{
+        margin-top: 210px;
+    }
+} 
+
+.popup__button-submit {
+    width: 410px;
+    height: 45px;
+}
+
+@media screen and (max-width: 556px) {
+    .popup__button-submit {
+        width: 260px;
+    }
+}
+
+.profile__button-edit {
+    margin-bottom: 16px;
+    border: none;
+    color: #FFF;
+    background-color: #202020;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: normal;
+}
+
+.profile__button-exit {
+    text-align: center;
+    border: none;
+    color: #EE3465;
+    background-color: #202020;
+    font-size: 13px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: normal;
+}
