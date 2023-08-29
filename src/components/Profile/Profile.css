@@ -71,7 +71,11 @@
     grid-area: input;
     
 }
-
+.profile__input:focus {
+    outline: none;
+    border: 1px solid rgba(136, 120, 217, 0.4);
+  }
+  
 .profile__container-utils {
     margin-top: 220px;
     display: flex;

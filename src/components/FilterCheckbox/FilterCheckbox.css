@@ -30,6 +30,10 @@
     -moz-appearance: none;
     -webkit-appearance: none; 
 }
+.checkbox-label__input:focus {
+  outline: none;
+  border: 1px solid rgba(136, 120, 217, 0.4);
+}
 
 .checkbox-label__input::after {
   position: absolute;
