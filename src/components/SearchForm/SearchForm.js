@@ -14,12 +14,12 @@ function SearchForm() {
                          name="search" 
                          required
                          />
-                    </div>
                     <button 
                     type="submit" 
                     className="search-form__submit-button button-hover"></button>
-               <FilterCheckbox />
-               </form>
+                </div>
+                        <FilterCheckbox />
+            </form>
                
          </section>
     )

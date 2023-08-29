@@ -32,14 +32,10 @@ function Navigation() {
                         <p className="navigation__link-text">Аккаунт</p>
                         <button type="button" className="navigation__button-profile button-hover"></button>
                     </div>
-                </Link>
-
-                <button type="button" className="navigation__button-nav button-hover" onClick={openMenu}></button>
-            <div className={`navigation__overlay ${isMenuOpened ? 'navigation__overlay_active' : ''}`} onClick={closeMenu}></div>
+                </Link>  
    </nav>
-
-
-   
+   <button type="button" className="navigation__button-nav button-hover" onClick={openMenu}></button>
+            <div className={`navigation__overlay ${isMenuOpened ? 'navigation__overlay_active' : ''}`} onClick={closeMenu}></div>
   </>
     )
 }

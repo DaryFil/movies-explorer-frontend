@@ -112,6 +112,7 @@
 }
 
 .auth__button {
+    margin-top: 65px;
     margin-bottom: 16px;
     color: #FFFFFF;
     background: #4285F4;

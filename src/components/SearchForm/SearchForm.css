@@ -38,15 +38,19 @@
   border-radius: 28px;
 }
 
+.search-form__input:focus {
+  outline: none;
+  border: 1px solid rgba(136, 120, 217, 0.4);
+}
 .search-form__submit-button {
-  position: absolute;
-  top: 6px;
-  right: 6px;
+  padding: 0;
   width: 34px;
   aspect-ratio: 1/1;
   border-radius: 50%;
   border: none;
   background-image: url("../../images/arrow-find.svg");
   background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #4285F4
 }
 

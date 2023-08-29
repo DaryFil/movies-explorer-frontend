@@ -32,11 +32,7 @@
   display: flex;
   justify-content: space-between;
 }
-@media screen and (max-width: 1023px) {
-  .about-me__container-info {
-    margin-right: 49px;
-  }
-}
+
 @media screen and (max-width: 767px) {
   .about-me__container-info {
     margin-top: 60px;
@@ -124,6 +120,7 @@
 
 @media screen and (max-width: 767px) {
   .about-me__information {
+    margin-top: 6px;
     font-size: 11px;
     line-height: 16px;
   }
@@ -141,7 +138,7 @@
 
 @media screen and (max-width: 1023px) {
   .about-me__github-link {
-    margin-top: 70px;
+    margin-top: 95px;
   }
 }
 
