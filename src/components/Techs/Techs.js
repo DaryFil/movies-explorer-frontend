@@ -5,8 +5,8 @@ function Techs() {
     return (
         <section className="techs" id="techs">
             <div className="techs__container">
-                <h2 className="techs__title">Технологии</h2>
-                <div className="techs__border"></div>
+                <h3 className="techs__title">Технологии</h3>
+                <div className="techs__info">
                 <span className="techs__count">7 технологий</span>
                 <p className="techs__description">На курсе веб-разработки мы освоили технологии, которые применили в дипломном&nbsp;проекте.</p>
                 <ul className="techs__list">
@@ -18,6 +18,7 @@ function Techs() {
                     <li className="techs__name">Express.js</li>
                     <li className="techs__name">mongoDB</li>
                 </ul>
+            </div>
             </div>
         </section>
     )

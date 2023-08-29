@@ -20,8 +20,8 @@ function Navigation() {
 
     return (
         <>
-   <div className={`navigation ${isMenuOpened ? 'navigation_active' : ''}`}>
-      <button className="navigation__button-close button-hover" onClick={closeMenu}></button>
+   <nav className={`navigation ${isMenuOpened ? 'navigation_active' : ''}`}>
+      <button type="button" className="navigation__button-close button-hover" onClick={closeMenu}></button>
       <div className="navigation__links">
             <Link to="/" className="navigation__link navigation__link_type_main link-hover" replace>Главная</Link>
             <Link to="/movies" className={`navigation__link ${location.pathname === '/movies' ? 'navigation__link_active' : ''} link-hover`} replace >Фильмы</Link>
@@ -36,7 +36,7 @@ function Navigation() {
 
                 <button type="button" className="navigation__button-nav button-hover" onClick={openMenu}></button>
             <div className={`navigation__overlay ${isMenuOpened ? 'navigation__overlay_active' : ''}`} onClick={closeMenu}></div>
-   </div>
+   </nav>
 
 
    

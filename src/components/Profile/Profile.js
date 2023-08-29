@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 import '../Profile/Profile.css';
 import Header from '../Header/Header.js';
 
@@ -15,7 +16,7 @@ function handleEditProfile(evt) {
     <>
      <Header />
         <main className="profile">
-         <div className="profile__container">
+         <section className="profile__container">
            <h1 className="profile__title">Привет, Дарья!</h1>
            <form className="profile__form" name="profile">
               <label className="profile__field">
@@ -30,6 +31,7 @@ function handleEditProfile(evt) {
                    name="name"
                    autoComplete="off"
                    value="Дарья"
+                   readOnly={!isEditProfile}
                  />
               </label>
 
@@ -39,7 +41,7 @@ function handleEditProfile(evt) {
                       className="profile__input"
                       required
                       type="email"
-                      placeholder="E-mail"
+                      placeholder="Введите E-mail:" readOnly
                       name="email"
                       autoComplete="off"
                       value="test@test.ru"
@@ -47,13 +49,13 @@ function handleEditProfile(evt) {
               </label>
             
               <div className="profile__container-utils">
-                {isEditProfile ? <button type="submit" className="popup__button-submit">Сохранить</button> : <>
+                {isEditProfile ? <button type="submit" className="popup__button-submit" disabled>Сохранить</button> : <>
                     <button type="button" className="profile__button-edit button-hover" onClick={handleEditProfile}>Редактировать</button>
-                    <button type="button" className="profile__button-exit button-hover">Выйти из аккаунта</button>
+                    <Link className="profile__button-exit button-hover" to="/">Выйти из аккаунта</Link>
                 </>}
               </div>
            </form>
-        </div>
+        </section>
     </main>
  </>
   );

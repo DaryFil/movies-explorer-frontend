@@ -22,9 +22,9 @@ return (
                 <img className="movies-card__image" src={props.card.image} alt={props.card.nameRU}></img>
         </a>
         <div className="movies-card__description">
-            <h3 className="movies-card__title">{props.card.nameRU}</h3>
-            {location.pathname === '/movies' ? <button className="movies-card__like-button button-hover"></button> :
-            <button className={isActiveRemoveClass}></button>}
+            <h2 className="movies-card__title">{props.card.nameRU}</h2>
+            {location.pathname === '/movies' ? <button type="button" className="movies-card__like-button button-hover"></button> :
+            <button type="button" className={isActiveRemoveClass}></button>}
         </div>
         <p className="movies-card__duration">{props.card.duration}</p>
    </article> 

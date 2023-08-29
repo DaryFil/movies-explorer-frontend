@@ -97,9 +97,9 @@ function MoviesCardList() {
 
 return (
     <section className="movies-card-list">
-        <div className="movies-card-list__container">
+        <ul className="movies-card-list__container">
             {cardList.map((card, i) => { return < MoviesCard card={card} key={i} /> })}
-        </div >
+        </ul >
 
         {location.pathname === '/movies' ? <button className="movies-card-list__button button-hover" type="button">Ещё</button> : null}
         </section>

@@ -16,14 +16,12 @@
     }
 }
 .movies-card__image {
+    width: 100%;
     object-fit: cover;
-    height: 203px;
+    aspect-ratio: 364/203;
     border-radius: 6px;
-    transition: scale 0.1s ease-in;
-}
-.movies-card__image:hover {
-    scale: 1.1;
-}
+   }
+
 .movies-card__description {
     margin: 16px 30px 17px 16px;
     display: flex;

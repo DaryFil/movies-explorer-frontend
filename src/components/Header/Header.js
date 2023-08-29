@@ -19,18 +19,20 @@ function Header() {
       {location.pathname !== "/" ? (
         <Navigation />
       ) : (
-        <div className="header__container">
-          <Link
-            to="sign-up"
+        <nav className="header__container">
+          <ul className="header__links"> 
+          <li className="header__link-item"><Link
+            to="signup"
             replace
             className="header__link-register link-hover"
           >
             Регистрация
-          </Link>
-          <Link to="sign-in" replace>
-            <button className="header__link-auth button-hover">Войти</button>
-          </Link>
-        </div>
+          </Link></li>
+         <li className="header__link-item"><Link to="signin" replace>
+            <button type="button" className="header__link-auth button-hover">Войти</button>
+          </Link></li>
+          </ul>
+        </nav>
       )} 
     </header>
   );
