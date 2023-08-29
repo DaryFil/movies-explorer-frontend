@@ -20,9 +20,10 @@
 }
 @media screen and (max-width: 670px) {
   .movies-card__trailer-link {
-    aspect-ratio: 250/140;
+    aspect-ratio: 25/14;
   }
 }
+
 .movies-card__image {
   width: 100%;
   display: block;
@@ -38,7 +39,7 @@
 }
 @media screen and (max-width: 670px) {
   .movies-card__image {
-    aspect-ratio: 250/140;
+    aspect-ratio: 25/14;
   }
 }
 
