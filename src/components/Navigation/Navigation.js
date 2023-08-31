@@ -19,8 +19,8 @@ function Navigation() {
     useEffect(() => { setIsMenuOpened(false) }, [location.pathname])
 
     return (
-        <>
-   <nav className={`navigation ${isMenuOpened ? 'navigation_active' : ''}`}>
+        <div className='navigation'>
+   <nav className={`navigation__container ${isMenuOpened ? 'navigation__container_active' : ''}`}>
       <button type="button" className="navigation__button-close button-hover" onClick={closeMenu}></button>
       <div className="navigation__links">
             <Link to="/" className="navigation__link navigation__link_type_main link-hover" replace>Главная</Link>
@@ -30,13 +30,13 @@ function Navigation() {
       <Link to="/profile" className="navigation__link navigation__link_type_profile link-hover" replace>
                     <div className="navigation__profile">
                         <p className="navigation__link-text">Аккаунт</p>
-                        <button type="button" className="navigation__button-profile button-hover"></button>
+                        <div className="navigation__button-profile button-hover"></div>
                     </div>
-                </Link>  
+                </Link>
    </nav>
    <button type="button" className="navigation__button-nav button-hover" onClick={openMenu}></button>
             <div className={`navigation__overlay ${isMenuOpened ? 'navigation__overlay_active' : ''}`} onClick={closeMenu}></div>
-  </>
+  </div>
     )
 }
 

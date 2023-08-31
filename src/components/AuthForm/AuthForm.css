@@ -3,24 +3,20 @@
   height: 100vh;
   min-height: 700px;
   display: flex;
-  align-items: center;
 }
 
 .auth__container {
-  margin: 0 auto 0;
+  margin: 70px auto 0;
   width: 396px;
-  height: 560px;
+  height: 572px;
   display: flex;
   flex-direction: column;
-}
-
-@media screen and (max-width: 1023px) {
-  .auth {
-    height: 100%;
   }
 
+@media screen and (max-width: 769px) {
+
   .auth__container {
-    margin: 50px auto;
+    margin: 232px auto 0;
   }
 }
 
@@ -30,6 +26,7 @@
   }
 
   .auth__container {
+    margin: auto;
     width: calc(100% - 60px);
     height: 100%;
   }
@@ -111,17 +108,16 @@
   font-weight: 400;
   font-style: normal;
   line-height: normal;
-}
+  }
 
 .auth__button {
-  margin-top: 65px;
-  margin-bottom: 16px;
-  color: #ffffff;
+  margin-top: 71px;
+   color: #ffffff;
   background: #4285f4;
   border: none;
   border-radius: 3px;
   width: 100%;
-  height: 46px;
+  height: 45px;
   font-size: 14px;
   font-weight: 500;
   font-style: normal;
@@ -139,7 +135,7 @@
   align-items: center;
   width: fit-content;
   margin: 0 auto 0;
-  font-size: 14px;
+    font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -147,7 +143,7 @@
 
 @media screen and (max-width: 556px) {
   .auth__container-link {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-size: 12px;
   }
 }

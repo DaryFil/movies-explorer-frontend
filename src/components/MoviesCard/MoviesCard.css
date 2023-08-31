@@ -44,7 +44,7 @@
 }
 
 .movies-card__description {
-  padding: 9px 16px 16px;
+  padding: 16px 16px 16px;
   display: grid;
   row-gap: 10px;
   align-items: center;
@@ -53,13 +53,12 @@
 
 @media screen and (max-width: 769px) {
   .movies-card__description {
-    padding: 8px 14px 13px;
+    padding: 14px;
     row-gap: 8px;
   }
 }
 @media screen and (max-width: 670px) {
   .movies-card__description {
-    padding: 7px 10px 14px 14px;
     row-gap: 6px;
   }
 }
@@ -71,11 +70,6 @@
   line-height: normal;
 }
 
-@media screen and (max-width: 769px) {
-  .movies-card__title {
-    margin-bottom: 2px;
-  }
-}
 @media screen and (max-width: 670px) {
   .movies-card__title {
     font-size: 12px;
@@ -84,14 +78,15 @@
 }
 
 .movies-card__like-button {
-  padding: none;
-  width: 16px;
-  height: 16px;
+  padding: 0;
+  width: 15px;
+  height: 15px;
   border: none;
   background-image: url("../../images/saveheart.svg");
   background-size: 30px;
   background-position: center;
   background-color: #222;
+  margin: auto;
 }
 .movies-card__like-button:hover {
   cursor: pointer;
@@ -100,26 +95,41 @@
   background-image: url("../../images/heartActive.svg");
 }
 .movies-card__delete-button {
-  display: none;
+  display: block;
   border: none;
   background-color: #202020;
   background-image: url("../../images/heartdelete.svg");
   background-position: center;
   background-repeat: no-repeat;
+  width: 8px;
+  aspect-ratio: 1/1;
+  margin: auto;
 }
 
-.movies-card__delete-button_active {
-  display: block;
+@media screen and (hover: hover) {
+  .movies-card__delete-button {
+    display: none;
+  }
+
+  .movies-card:hover .movies-card__delete-button {
+    display: block;
+  }
 }
 
 .movies-card__duration {
   margin: 0;
   padding-left: 16px;
+  padding-bottom: 16px;
   color: #8b8b8b;
   font-size: 11px;
   font-weight: 400;
   font-style: normal;
   line-height: normal;
+}
+@media screen and (max-width: 769px) {
+  .movies-card__duration {
+    padding-bottom: 14px;
+  }
 }
 
 @media screen and (max-width: 670px) {

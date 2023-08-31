@@ -3,34 +3,34 @@
   padding: 80px 70px;
   width: 100%;
   max-width: 1280px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   box-sizing: border-box;
 }
+
+.movies-card-list_type_saved-movies {
+  padding-bottom: 247px;
+}
+
 @media screen and (max-width: 769px) {
   .movies-card-list {
     padding-right: 30px;
     padding-left: 30px;
   }
-}
-@media screen and (max-width: 670px) {
-  .movies-card-list {
-    padding-top: 50px;
-    padding-right: 10px;
-    padding-bottom: 80px;
+
+  .movies-card-list_type_saved-movies {
+    padding-bottom: 170px;
   }
 }
 @media screen and (max-width: 670px) {
   .movies-card-list {
-    padding-top: 50px;
-    padding-left: 10px;
+    padding: 50px 10px 80px;
+  }
+
+  .movies-card-list_type_saved-movies {
+    padding-bottom: 166px;
   }
 }
+
 .movies-card-list__container {
-  padding: 0;
-  margin: 0;
-  width: 100%;
   display: grid;
   gap: 37px 24px;
   grid-template-columns: repeat(auto-fill, minmax(364px, 1fr));

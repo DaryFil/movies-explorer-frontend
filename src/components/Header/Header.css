@@ -2,10 +2,33 @@
     width: 100%;
     min-height: 74px;
     display: flex;
+    align-items: center;
+    }
+
+.header__container {
+    max-width: 1280px;
+    width: 100%;
+    display: flex;
     position: relative;
     align-items: center;
     justify-content: space-between;
+    gap: 44px;
+    padding: 0 70px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+@media screen and (max-width: 769px) {
+    .header__container {
+        padding-left: 30px;
+        padding-right: 30px;
     }
+}
+@media screen and (max-width: 670px) {
+    .header__container {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+}
 
 .header_type_landing {
     background-color: #073042;
@@ -16,51 +39,25 @@
     height: 38px;
     }
 
-    
-.header__container {
+.header__links-container {
     display: flex;
     align-items: center;
-    margin-right: 70px;
-    
-}
 
-@media screen and (max-width: 1023px) {
-    .header__container {
-        margin-right: 30px;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .header__container {
-        margin-right: 14px;
-    }
 }
 
 .header__logo {
      width: 38px;
     height: 38px;
-    margin-left: 70px;
-}
-
-@media screen and (max-width: 1023px) {
-    .header__logo {
-        margin-left: 30px;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .header__logo {
-        margin-left: 14px;
-    }
 }
 
 .header__link-register {
     color: #FFF;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 16px;
-    font-style: normal;      
+    font-style: normal;
+    display: block;
 }
 @media screen and (max-width: 1023px) {
     .header__link-register {
@@ -74,19 +71,21 @@
     }
 }
 .header__link-auth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 76px;
     height: 32px;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 16px;
     font-style: normal;
-    margin-left: 50px;
     text-decoration: none;
     border-radius: 3px;
     color: #000000;
     background: #3DDC84;
     border: none;
-   
+
 }
 @media screen and (max-width: 1023px) {
     .header__link-auth {
@@ -98,13 +97,18 @@
         font-size: 10px;
         width: 54px;
         height: 26px;
-        margin-left: 14px;
     }
 }
 
 .header__links {
     display: flex;
-    gap: 17px;
+    gap: 30px;
     align-items: center;
     list-style-type: none;
-};
+}
+
+@media screen and (max-width: 566px) {
+    .header__links {
+        gap: 14px;
+    }
+}

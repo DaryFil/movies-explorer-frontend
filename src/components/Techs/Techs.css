@@ -33,17 +33,16 @@
       padding: 80px 0 0;
       gap: 22px;
     }
-  }  
+  }
   @media screen and (max-width: 670px){
      .techs__info {
-      padding: 60px 0 0;
+      padding: 59px 0 0;
       gap: 24px;
     }
 }
 
 .techs__title {
-    padding: 0;
-    margin: 0; 
+    margin: 0;
     font-size: 22px;
     font-style: normal;
     font-weight: 400;
@@ -56,8 +55,9 @@
 
 @media screen and (max-width: 670px) {
     .techs__title {
-        margin: 70px 0 28px;
+        padding-bottom: 28px;
         font-size: 18px;
+        line-height: 22px;
         letter-spacing: -0.72px;
     }
 }
@@ -70,7 +70,15 @@
     line-height: 58px;
     letter-spacing: -2px;
 }
-   
+
+@media screen and (max-width: 670px) {
+    .techs__count {
+        font-size: 30px;
+        line-height: 36px;
+        letter-spacing: -1.2px;
+    }
+}
+
 .techs__description {
     margin: 0;
     max-width: 460px;
@@ -81,7 +89,7 @@
     letter-spacing: -0.5px;
     text-align: center;
 }
-    
+
 @media screen and (max-width: 769px) {
     .techs__description {
         font-size: 12px;
@@ -117,7 +125,7 @@
 @media screen and (max-width: 670px) {
     .techs__list {
         margin: 26px 0 0;
-        grid-template-columns: repeat(auto-fit, 84px);
+        grid-template-columns: repeat(2, 84px);
   }
 }
 .techs__name {
