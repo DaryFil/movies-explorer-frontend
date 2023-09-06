@@ -1,11 +1,16 @@
 import React from "react";
+import {useContext} from "react";
 import { Link, useLocation } from "react-router-dom";
 import logoHeader from "../../images/logo.svg";
 import Navigation from "../Navigation/Navigation";
 import "../Header/Header.css";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 function Header() {
   const location = useLocation();
+
+  const currentUser = useContext(CurrentUserContext);
+  const isAuth = currentUser._id ? true : false;
 
   return (
     <header
@@ -17,7 +22,7 @@ function Header() {
         <Link className="header__link link-hover" to="/">
           <img src={logoHeader} alt="Логотип проекта" className="header__logo" />
         </Link>
-        {location.pathname !== "/" ? (
+        {isAuth ? (
           <Navigation />
         ) : (
           <nav className="header__links-container">

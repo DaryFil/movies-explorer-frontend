@@ -1,10 +1,44 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import useFormValidation from "../../hooks/useFormValidation";
 import "../AuthForm/AuthForm.css";
 import logo from "../../images/logo.svg";
+import { EMAIL_REGEX, NAME_REGEX } from '../../utils/constants';
 
-function AuthForm(props) {
-  const location = useLocation();
+const AuthForm = ({
+    title,
+    buttonText,
+    question,
+    onSubmit,
+    linkUrl,
+    linkText,
+    loggedIn,
+    isLoading
+      }) => {
+    const { pathname } = useLocation();
+    const navigate = useNavigate();
+
+    const { inputValues, handleChange, errors, isValid, resetForm } =
+    useFormValidation({name: '',email: '',password:''});
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      if (isValid) {
+        onSubmit(inputValues);
+      }
+  };
+  
+  useEffect(() => {
+    if (loggedIn) resetForm();
+  }, [loggedIn, resetForm]);
+
+  useEffect(() => {
+    if (loggedIn) {
+      navigate("/movies", { replace: true });
+    }
+  }, [navigate, loggedIn]);
+
 
   return (
     <section className="auth">
@@ -12,61 +46,97 @@ function AuthForm(props) {
         <Link to="/" className="auth__link-logo link-hover">
           <img src={logo} alt="Логотип проекта" className="auth__logo" />
         </Link>
-        <h1 className="auth__title">{props.title}</h1>
-        <form className="auth__form">
+        <h1 className="auth__title">{title}</h1>
+        <form 
+        className="auth__form" noValidate
+         onSubmit={handleSubmit}>
           <div className="auth__form-container">
-            {location.pathname === "/signup" ? (
+          {pathname === "/signup" ? (
               <div className="auth__field">
-                <label className="auth__label">Имя</label>
-                <input
-                  className="auth__input"
-                  type="text"
-                  minLength="2"
-                  maxLength="30"
-                  placeholder="Имя"
-                  required
-                ></input>
-                <span className="auth__input-error"></span>
-              </div>
+                     <label className="auth__label">Имя</label>
+            <input
+              className={`auth__input ${
+                isLoading ? "auth__input_disabled" : ""
+              }`}
+              type="text"
+              name="name"
+              placeholder="Имя"
+              required
+              minLength="2"
+              maxLength="30"
+              value={inputValues.name || ""}
+              onChange={handleChange}
+              pattern={NAME_REGEX}
+            />
+             <span
+              className={`auth__input-error ${
+                errors.name && "auth__input-error_active"
+              }`}
+            >
+              {errors.name || ""}
+            </span>
+            </div>
             ) : null}
-            <div className="auth__field">
+                    <div className="auth__field">
               <label className="auth__label">e-mail</label>
               <input
-                className="auth__input"
+               className={`auth__input ${isLoading ? "auth__input_disabled" : ""}`}
                 type="email"
+                name="email"
                 placeholder="E-mail"
+                required
                 minLength="4"
                 maxLength="40"
-                required
-              ></input>
-              <span className="auth__input-error"></span>
+                value={inputValues.email || ""}
+                onChange={handleChange}
+                pattern={EMAIL_REGEX}
+               />
+               <span
+          className={`auth__input-error ${
+            errors.email && "auth__input-error_active"
+          }`}
+        >
+          {errors.email || ""}
+        </span>
             </div>
             <div className="auth__field">
               <label className="auth__label">Пароль</label>
               <input
-                className="auth__input"
+                 className={`auth__input ${isLoading ? "auth__input_disabled" : ""}`}
                 type="password"
+                name="password"
                 placeholder="Пароль"
+                required
                 minLength="8"
                 maxLength="30"
-                required
+                value={inputValues.password || ""}
+                onChange={handleChange}
               ></input>
-              <span className="auth__input-error"></span>
+               <span
+          className={`auth__input-error ${
+            errors.password && "auth__input-error_active"
+          }`}
+        >
+          {errors.password || ""}
+        </span>
             </div>
           </div>
 
           <div className="auth__buttons">
-            <button className="auth__button button-hover" type="submit">
-              {props.buttonText}
+
+            <button className="auth__button button-hover"
+            type="submit"
+             disabled={!isValid}>
+                        {buttonText}
             </button>
             <div className="auth__container-link">
-              <p className="auth__link-text">{props.linkDescription}</p>
+              <p className="auth__link-text">{question}</p>
               <Link
-                to={props.linkUrl}
-                replace
+                to={linkUrl}
+                // replace
                 className="auth__link link-hover"
               >
-                {props.linkText}
+                {linkText}
               </Link>
             </div>
           </div>

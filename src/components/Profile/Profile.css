@@ -143,7 +143,10 @@
   font-style: normal;
   line-height: normal;
 }
-
+.profile__button-edit:disabled {
+  background-color: #F8F8F8;
+  color: #C2C2C2;
+}
 .profile__button-exit {
   text-align: center;
   border: none;

@@ -156,3 +156,17 @@
   text-decoration: none;
   color: #4285f4;
 }
+.auth__input-error {
+	padding-top: 5px;
+	min-height: 25px;
+	color: #EE3465;
+	font-size: 10px;
+	line-height: 12px;
+	font-weight: 400;
+	opacity: 0;
+	transition: all .4s ease;
+}
+
+.auth__input-error_active {
+  opacity: 1;
+}

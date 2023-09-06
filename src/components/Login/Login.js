@@ -1,15 +1,17 @@
 import React from "react";
 import AuthForm from "../AuthForm/AuthForm";
 
-function Login() {
+const Login = ({ handleSignIn, isLoading}) => {
   return (
     <main>
     <AuthForm
       title="Рады видеть!"
       buttonText="Войти"
-      linkDescription="Ещё не зарегистрированы?"
+      question="Ещё не зарегистрированы?"
       linkText="Регистрация"
-      linkUrl="/signup"
+      linkUrl="/signin"
+      onSubmit={handleSignIn}
+			isLoading={isLoading}
     />
     </main>
   );
