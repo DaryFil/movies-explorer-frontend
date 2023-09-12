@@ -1,7 +1,18 @@
 import React from "react";
+import { useEffect } from 'react';
 import AuthForm from "../AuthForm/AuthForm";
 
-const Login = ({ handleSignIn, isLoading}) => {
+const Login = ({
+   handleSignIn,
+    isLoading,
+     infoTitle,
+    // resetError
+  }) => {
+
+      // useEffect(() => {
+      //   resetError();
+      // }, []);
+
   return (
     <main>
     <AuthForm
@@ -9,10 +20,11 @@ const Login = ({ handleSignIn, isLoading}) => {
       buttonText="Войти"
       question="Ещё не зарегистрированы?"
       linkText="Регистрация"
-      linkUrl="/signin"
+      linkUrl="/signup"
       onSubmit={handleSignIn}
 			isLoading={isLoading}
-    />
+      infoTitle={infoTitle}
+       />
     </main>
   );
 }

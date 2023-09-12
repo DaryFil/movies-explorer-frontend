@@ -2,6 +2,7 @@ import {
     mainApiSettings,
     METHOD_POST,
     METHOD_PATCH,
+    METHOD_DELETE,
 //     METHOD_DELETE,
   } from '../utils/constants';
 
@@ -72,3 +73,65 @@ import {
       });
   };
   
+
+  export const getSavedMovies = () => {
+    return fetch(`${mainApiSettings}/movies`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+      },
+    })
+      .then(checkResponse)
+      .then((data) => {
+        return data;
+      });
+  };
+
+  export const likeMovie = (data) => {
+    return fetch(`${mainApiSettings}/movies`, {
+      method: METHOD_POST,
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+      },
+      body: JSON.stringify({
+        country: data.country,
+        director: data.director,
+        duration: data.duration,
+        year: data.year,
+        description: data.description,
+        image:  `https://api.nomoreparties.co${data.image.url}`,
+        trailerLink: data.trailerLink,
+        nameRU: data.nameRU,
+        nameEN: data.nameEN,
+        thumbnail: `https://api.nomoreparties.co${data.image.formats.thumbnail.url}`,
+        movieId: data.id,
+      }),
+    }).then(checkResponse);
+  };
+
+  export const deleteMovie = (movieId) => {
+    return fetch(`${mainApiSettings}/movies/${movieId}`, {
+      method: METHOD_DELETE,
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+      },
+    })
+      .then(checkResponse)
+      .then((data) => {
+        return data;
+      });
+  };
+
+  export const checkToken = (jwt) => {
+return fetch(`${mainApiSettings}/users/me`, {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+  },
+})
+  .then(checkResponse)
+    };

@@ -7,7 +7,12 @@ import Header from '../Header/Header.js';
 import { EMAIL_REGEX, NAME_REGEX } from '../../utils/constants';
 import '../Profile/Profile.css';
 
-function Profile({ signOut, loggedIn, handleUserUpdate,}) {
+function Profile({
+   signOut,
+    loggedIn,
+     handleUserUpdate,
+    // resetError
+  }) {
    const currentUser = useContext(CurrentUserContext);
 
    // режим изменения формы и кнопок
@@ -42,6 +47,13 @@ function Profile({ signOut, loggedIn, handleUserUpdate,}) {
     });
   }, [currentUser, setInputValues]);
 
+  // useEffect(() => {
+  //   resetError();
+  // }, []);
+  
+
+  const isChanged = inputValues.name !== currentUser.name || inputValues.email !== currentUser.email;
+  const buttonEnabled = !(isValid === isChanged);
  return (
     <>
      <Header loggedIn={loggedIn} />
@@ -102,7 +114,9 @@ function Profile({ signOut, loggedIn, handleUserUpdate,}) {
           type="button" 
           onClick={handleSubmit}
           className="popup__button-submit"
-           disabled={!isValid}>
+          //  disabled={!isValid}
+           disabled={buttonEnabled}
+           >
           Сохранить
           </button>
           : <>
