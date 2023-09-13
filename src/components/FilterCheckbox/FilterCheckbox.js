@@ -1,26 +1,30 @@
 import React from "react";
-import { useState } from 'react';
 import '../FilterCheckbox/FilterCheckbox.css';
 
-function FilterCheckbox() {
+const FilterCheckbox = ({
+  isChecked,
+  setIsChecked,
+  onSwitch,
+  moviesSearch
+}) => {
 
-    const [isShortFilm, setIsShortFilm] = useState(false);
+  const handleCheckbox = () => {
+    setIsChecked(!isChecked);
+    onSwitch(moviesSearch, !isChecked)
+   
+  };
 
-    const handleChangeSwitchToggle = () => {
-        setIsShortFilm(!isShortFilm);
-      };
-
-    return (
-      <label className="checkbox-label button-hover">
-          <input
-             className="checkbox-label__input"
-             id="checkbox"
-             type="checkbox"
-             onChange={handleChangeSwitchToggle}
-            //  readOnly
+  return (
+    <label className="checkbox-label button-hover">
+      <input
+        className="checkbox-label__input"
+        id="checkbox"
+        type="checkbox"
+        onChange={handleCheckbox}
+        checked={isChecked}
       />
-      <span 
-        className={`checkbox-label__name ${isShortFilm ? 'checkbox-label__name_active' : ''}`}
+      <span
+        className={`checkbox-label__name ${isChecked ? 'checkbox-label__name_active' : ''}`}
       >
       Короткометражки</span>
     </label>

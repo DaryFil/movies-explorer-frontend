@@ -93,6 +93,17 @@
 }
 .movies-card__like-button_active {
   background-image: url("../../images/heartActive.svg");
+  object-fit: contain;
+  background-size: 30px;
+  background-position: center;
+  background-color: #222;
+  object-fit: contain;
+  padding: 0;
+  width: 15px;
+  height: 15px;
+  border: none;
+ 
+  margin: auto;
 }
 .movies-card__delete-button {
   display: block;

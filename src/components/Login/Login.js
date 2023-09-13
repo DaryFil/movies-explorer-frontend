@@ -1,16 +1,28 @@
 import React from "react";
+import { Navigate } from "react-router-dom";
 import AuthForm from "../AuthForm/AuthForm";
 
-function Login() {
+const Login = ({
+   handleSignIn,
+    isLoading,
+     infoTitle,
+     loggedIn,
+  }) => {
+      if(loggedIn) {
+        return <Navigate to={'/'}/>
+            }
   return (
     <main>
     <AuthForm
       title="Рады видеть!"
       buttonText="Войти"
-      linkDescription="Ещё не зарегистрированы?"
+      question="Ещё не зарегистрированы?"
       linkText="Регистрация"
       linkUrl="/signup"
-    />
+      onSubmit={handleSignIn}
+			isLoading={isLoading}
+      infoTitle={infoTitle}
+       />
     </main>
   );
 }
