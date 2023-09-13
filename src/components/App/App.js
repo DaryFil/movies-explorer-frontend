@@ -41,6 +41,7 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [infoTitle, setInfoTitle] = useState('');
+  const [profileInfoTitle, setProfileInfoTitle] = useState('');
 
   // сохраненные фильмы
   const [savedMovies, setSavedMovies] = useState([]);
@@ -163,25 +164,25 @@ function App() {
   }
 
   function handleUserUpdate(userData) {
-    setIsLoading(true);
+    // setIsLoading(true);
     mainApi
       .updateUserInfo(userData)
       .then((data) => {
         setCurrentUser(data.data);
-        setInfoTitle("Данные успешно обновлены");
+        setProfileInfoTitle("Данные успешно обновлены");
       })
       .catch((err) => {
         if (err === ERROR_CODE_409) {
-          setInfoTitle(ERROR_NOT_UNIQUE_EMAIL);
+          setProfileInfoTitle(ERROR_NOT_UNIQUE_EMAIL);
         } else {
-          setInfoTitle(ERROR_UPDATE_USER);
+          setProfileInfoTitle(ERROR_UPDATE_USER);
         }
         console.log(err);
-        setInfoTitle(ERROR_UPDATE_DATA_USER);
+        setProfileInfoTitle(ERROR_UPDATE_DATA_USER);
       })
-      .finally(() => {
-        setIsLoading(false);
-      });
+      // .finally(() => {
+      //   // setIsLoading(false);
+      // });
   }
 
   function signOut() {
@@ -207,9 +208,7 @@ function App() {
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
-      {isLoading
-        ? <Preloader/>
-        : (
+    
           <div className="root">
             <Routes>
               <Route
@@ -272,9 +271,9 @@ function App() {
                            handleUserUpdate={handleUserUpdate}
                            isLoading={isLoading}
                            signOut={signOut}
-                           infoTitle={infoTitle}
-                           //  resetError={resetMessages}
-                         />
+                           infoTitle={profileInfoTitle}
+                           setInfoTitle={setProfileInfoTitle}
+                     />
                        </ProtectedRoute>
                      }
               />
@@ -284,7 +283,6 @@ function App() {
                         handleSignUp={handleSignUp}
                        isLoading={isLoading}
                        infoTitle={infoTitle}
-                       //  resetError={resetMessages}
                      />
                      }
               />
@@ -294,7 +292,6 @@ function App() {
                        handleSignIn={handleSignIn}
                        isLoading={isLoading}
                        infoTitle={infoTitle}
-                       //  resetError={resetMessages}
                      />
                      }
               />
@@ -303,7 +300,6 @@ function App() {
               />
             </Routes>
           </div>
-        )}
     </CurrentUserContext.Provider>
   );
 }

@@ -1,17 +1,14 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
+import Preloader from "../Preloader/Preloader";
 
-// export const ProtectedRoute = ({ element: Component, ...props }) => {
-//     return props.loggedIn ? (
-//       <Component {...props} />
-//     ) : (
-//       <Navigate to="/" replace />
-//     );
-//   };
   export default function ProtectedRoute({ loggedIn, children, isLoading }) {
+    if(isLoading) {
+        return <Preloader/>
+    }
     return (
         <>
-            {/* {isLoading ? <Preloader /> : loggedIn ? children : <Navigate to="/" replace />} */}
+           
             {  !loggedIn ? <Navigate to="/" replace /> : children}
         </>
     )

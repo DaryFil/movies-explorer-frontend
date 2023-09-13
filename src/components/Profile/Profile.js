@@ -11,6 +11,8 @@ function Profile({
    signOut,
     loggedIn,
      handleUserUpdate,
+     infoTitle, 
+     setInfoTitle,
     // resetError
   }) {
    const currentUser = useContext(CurrentUserContext);
@@ -47,11 +49,17 @@ function Profile({
     });
   }, [currentUser, setInputValues]);
 
+  useEffect(() => {
+  return () => {
+    setInfoTitle('');
+  }
+  }, []);
+
   // useEffect(() => {
   //   resetError();
   // }, []);
   
-
+console.log(infoTitle);
   const isChanged = inputValues.name !== currentUser.name || inputValues.email !== currentUser.email;
   const buttonEnabled = !(isValid === isChanged);
  return (
@@ -107,7 +115,7 @@ function Profile({
           {errors.email || ""}
         </span>
               </label>
-            
+            {infoTitle}
           <div className="profile__container-utils">
           {isEdit ? 
           <button
