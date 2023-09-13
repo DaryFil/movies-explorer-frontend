@@ -8,8 +8,7 @@ import Preloader from "../Preloader/Preloader";
     }
     return (
         <>
-           
-            {  !loggedIn ? <Navigate to="/" replace /> : children}
+           {  !loggedIn ? <Navigate to="/" replace /> : children}
         </>
     )
 }

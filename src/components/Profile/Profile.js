@@ -13,7 +13,6 @@ function Profile({
      handleUserUpdate,
      infoTitle, 
      setInfoTitle,
-    // resetError
   }) {
    const currentUser = useContext(CurrentUserContext);
 
@@ -55,11 +54,6 @@ function Profile({
   }
   }, []);
 
-  // useEffect(() => {
-  //   resetError();
-  // }, []);
-  
-console.log(infoTitle);
   const isChanged = inputValues.name !== currentUser.name || inputValues.email !== currentUser.email;
   const buttonEnabled = !(isValid === isChanged);
  return (
@@ -122,7 +116,6 @@ console.log(infoTitle);
           type="button" 
           onClick={handleSubmit}
           className="popup__button-submit"
-          //  disabled={!isValid}
            disabled={buttonEnabled}
            >
           Сохранить

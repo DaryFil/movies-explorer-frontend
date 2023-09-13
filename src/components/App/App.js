@@ -164,8 +164,7 @@ function App() {
   }
 
   function handleUserUpdate(userData) {
-    // setIsLoading(true);
-    mainApi
+     mainApi
       .updateUserInfo(userData)
       .then((data) => {
         setCurrentUser(data.data);
@@ -180,9 +179,6 @@ function App() {
         console.log(err);
         setProfileInfoTitle(ERROR_UPDATE_DATA_USER);
       })
-      // .finally(() => {
-      //   // setIsLoading(false);
-      // });
   }
 
   function signOut() {
@@ -208,7 +204,6 @@ function App() {
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
-    
           <div className="root">
             <Routes>
               <Route
