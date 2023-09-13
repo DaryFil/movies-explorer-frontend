@@ -11,7 +11,7 @@ const FilterCheckbox = ({
   const handleCheckbox = () => {
     setIsChecked(!isChecked);
     onSwitch(moviesSearch, !isChecked)
-    localStorage.setItem("isShort", JSON.stringify(!isChecked));
+   
   };
 
   return (

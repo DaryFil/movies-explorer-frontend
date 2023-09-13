@@ -72,6 +72,7 @@ const Movies = ({
 
   function handleToggleSwitcher(search, isShort) {
     filter(movies, search, isShort)
+    localStorage.setItem("isShort", JSON.stringify(isShort));
   }
 
   function filter(movies, search, isShort) {
