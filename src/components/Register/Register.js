@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect } from 'react';
+import { Navigate } from "react-router-dom";
 import AuthForm from '../AuthForm/AuthForm';
 
 
@@ -7,12 +8,15 @@ const Register = ({
   handleSignUp,
    isLoading,
     infoTitle,
+    loggedIn,
     // resetError
   }) => {
     // useEffect(() => {
     //   resetError();
     // }, []);
-    
+    if(loggedIn) {
+return <Navigate to={'/'}/>
+    }
   return (
     <main>
       <AuthForm

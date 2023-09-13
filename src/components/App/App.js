@@ -281,7 +281,7 @@ function App() {
               <Route path="/signup"
                      element={<Register
                        loggedIn={loggedIn}
-                       handleSignUp={handleSignUp}
+                        handleSignUp={handleSignUp}
                        isLoading={isLoading}
                        infoTitle={infoTitle}
                        //  resetError={resetMessages}
