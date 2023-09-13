@@ -2,5 +2,7 @@ Movies-explorer
 
 Название макета: dark-3
 
-фронтенд-https://filmfusion.nomoreparties.co/
-бекенд-https://api.filmfusion.nomoreparties.co/
+пулреквест:https://github.com/DaryFil/movies-explorer-frontend/pull/2 
+
+фронтенд:https://filmfusion.nomoreparties.co/
+
